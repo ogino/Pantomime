@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -171,6 +171,20 @@
 			remoteGlobalIDString = 53DD39FA12A89020008A5727;
 			remoteInfo = ssl;
 		};
+		8849F457134C5C890098E216 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8849F44E134C5C890098E216 /* openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9069D28C0FCE659A0042E34C;
+			remoteInfo = crypto;
+		};
+		8849F459134C5C890098E216 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8849F44E134C5C890098E216 /* openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53DD39FA12A89020008A5727;
+			remoteInfo = ssl;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -311,9 +325,10 @@
 		535F4B011292725200953978 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extensions.h"; path = "Framework/Pantomime/NSString+Extensions.h"; sourceTree = "<group>"; };
 		535F4B021292725200953978 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extensions.m"; path = "Framework/Pantomime/NSString+Extensions.m"; sourceTree = "<group>"; };
 		535F4B031292725200953978 /* Pantomime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pantomime.h; path = Framework/Pantomime/Pantomime.h; sourceTree = "<group>"; };
-		535F4B941292743600953978 /* openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = openssl.xcodeproj; sourceTree = OPENSSL_SRC; };
+		535F4B941292743600953978 /* openssl.xcodeproj */ = {isa = PBXFileReference; explicitFileType = text.plist.pbfilespec; name = openssl.xcodeproj; path = /openssl.xcodeproj; sourceTree = "<absolute>"; };
 		53D85E9512A634BB00E5E591 /* StdMapIntWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StdMapIntWrapper.h; path = Framework/Pantomime/StdMapIntWrapper.h; sourceTree = "<group>"; };
 		53D85E9612A634BB00E5E591 /* StdMapIntWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = StdMapIntWrapper.mm; path = Framework/Pantomime/StdMapIntWrapper.mm; sourceTree = "<group>"; };
+		8849F44E134C5C890098E216 /* openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openssl.xcodeproj; path = "../openssl-xcode/openssl.xcodeproj"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* Pantomime_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pantomime_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libPantomime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPantomime.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -344,7 +359,7 @@
 		0867D691FE84028FC02AAC07 /* Pantomime */ = {
 			isa = PBXGroup;
 			children = (
-				535F4B941292743600953978 /* openssl.xcodeproj */,
+				8849F44E134C5C890098E216 /* openssl.xcodeproj */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -524,6 +539,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8849F44F134C5C890098E216 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8849F458134C5C890098E216 /* libcrypto.a */,
+				8849F45A134C5C890098E216 /* libssl.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -632,7 +656,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Pantomime" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -645,6 +669,10 @@
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 8849F44F134C5C890098E216 /* Products */;
+					ProjectRef = 8849F44E134C5C890098E216 /* openssl.xcodeproj */;
+				},
 				{
 					ProductGroup = 535F4BAB1292747600953978 /* Products */;
 					ProjectRef = 535F4B941292743600953978 /* openssl.xcodeproj */;
@@ -670,6 +698,20 @@
 			fileType = archive.ar;
 			path = libssl.a;
 			remoteRef = 53DD3A3812A8C97B008A5727 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8849F458134C5C890098E216 /* libcrypto.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcrypto.a;
+			remoteRef = 8849F457134C5C890098E216 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8849F45A134C5C890098E216 /* libssl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libssl.a;
+			remoteRef = 8849F459134C5C890098E216 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -772,9 +814,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Pantomime_Prefix.pch;
-				HEADER_SEARCH_PATHS = "$(OPENSSL_SRC)/**";
+				HEADER_SEARCH_PATHS = "../openssl-xcode/**";
 				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = Pantomime;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -788,9 +832,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Pantomime_Prefix.pch;
-				HEADER_SEARCH_PATHS = "$(OPENSSL_SRC)/**";
+				HEADER_SEARCH_PATHS = "../openssl-xcode/**";
 				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = Pantomime;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -807,7 +853,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -823,7 +869,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
